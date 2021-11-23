@@ -1,5 +1,7 @@
 package damanna.payment.service;
 
+import java.util.List;
+
 import damanna.vo.PaymentVO;
 
 public interface IPaymentService {
@@ -10,5 +12,6 @@ public interface IPaymentService {
 	 * @return 작업성공 : 1이상, 작업실패 : 0
 	 */
 	public int insertPayment(PaymentVO payVo);
+	public List<PaymentVO> getAllpayList();
 	
 }

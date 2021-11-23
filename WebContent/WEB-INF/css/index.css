@@ -1,0 +1,125 @@
+#contents{
+	width: 100%;
+	height: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #f5f7fa;
+	display: flex;
+}
+
+.chat{
+	width: 30%;
+	height:100%;
+	display: block;
+	float: left;
+	position:relative;
+	margin-right: 10px;
+}
+
+.swiper-container{
+	width: 65%;
+	height: 100%;
+	display: block;
+	border: 2px solid black;
+	margin-left: 20px;
+	float: right;
+	flex-direction: row;
+	}
+	
+.chat .header{
+	background: linear-gradient(262deg, #ff7854, #fd267d);
+    width: 100%;
+	height: 80px;
+	box-shadow: 0 1px 8px 0 rgba(0, 20, 20, 0.2);
+	display: flex;
+	align-items: center;
+	padding: 0 0px;
+	
+}	
+
+.chat .header img {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	border: 2px solid #fff;
+	box-shadow: 0 1px 8px 0 rgba(0, 20, 20, 0.2);
+}
+
+.chat .header .myprofilename {
+	padding: 0 10px;
+	color: #fff;
+	font-size: 23px;
+}
+
+
+.chat .menu ul {
+	display: flex;
+	padding: 0 20px;
+}
+
+.chat .menu ul li {
+	list-style: none;
+	margin: 0 10px;
+	font-weight: 700;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+}
+
+.chat .menu ul li a:link {
+	 text-decoration:none; 
+	 color: black;
+}
+.chat .menu ul li a:visited {
+	 text-decoration:none;
+	 color: black;
+}
+.chat .menu ul li a:hover {
+	 text-decoration:none;
+	 color: black;
+}
+.chat .menu ul li a:active {
+	 text-decoration:none;
+	 color: black;
+	 border-bottom: 3px solid #fd5068;
+	padding-bottom: 2px;
+	 
+}
+.chat .menu ul li a:active:before {
+	 text-decoration:none;
+	 color: black;
+	 border-bottom: 3px solid #fd5068;
+	padding-bottom: 2px;
+	 
+}
+
+.swiper-container .swiper-wrapper .swiper-slide .picture {
+	text-align: center;
+	width:100%;
+	height: 450px;
+}
+.swiper-container .swiper-wrapper .swiper-slide .text {
+	width:100%;
+	height:auto;
+	text-align:center;
+	background-color: white;	
+	bottom: 0px;
+}
+
+	
+.chat .header .myprofilename a:link {
+	 text-decoration:none; 
+	 color: white;
+}
+.chat .header .myprofilename a:visited {
+	 text-decoration:none;
+	 color: white;
+}
+.chat .header .myprofilename a:hover {
+	 text-decoration:none;
+	 color: white;
+}
+.chat .header .myprofilename a:active {
+	 text-decoration:none;
+	 color: white;
+	 
+}

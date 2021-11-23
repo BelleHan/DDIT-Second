@@ -26,6 +26,8 @@ public class NoticeSelectServlet extends HttpServlet {
 		
 		NoticeBoardVO noticeVo = (NoticeBoardVO) service.getNotice(noticeId);
 		
+		service.getNoticeCount(noticeId);
+		
 		request.setAttribute("noticeVo", noticeVo);
 		
 		RequestDispatcher rd =

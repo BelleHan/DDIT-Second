@@ -1,6 +1,8 @@
 package damanna.payment.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -33,6 +35,18 @@ public class PaymentDaoImpl implements IPaymentDao {
 			e.printStackTrace();
 		}
 		return cnt;
+	}
+
+	@Override
+	public List<PaymentVO> getAllpayList() {
+		List<PaymentVO> payList = new ArrayList<>();
+		try {
+			payList = smc.queryForList("pay.getAllPay");
+		} catch (SQLException e) {
+			payList = null;
+			e.printStackTrace();
+		}
+		return payList;
 	}
 
 }

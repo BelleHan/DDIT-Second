@@ -3,12 +3,14 @@
 	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
 	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="member">
-<!-- 	<insert id="insertMember" parameterClass="memberVo"> -->
-<!-- 		INSERT INTO MEMBER (MEMBER_ID, CITY_CODE, MEMBER_PW, MEMBER_NM, MEMBER_BIR, MEMBMER_MAIL, MEMBER_HP, MEMBER_GEN -->
-<!--                   , MEMBER_IMG1, MEMBER_IMG2, MEMBER_HOBBY, PROFILE_INTRO, MEMBER_INSTA, PROFILE_MUSIC, MATCH_TYPE) -->
-<!--        VALUES (#memberId#, #cityCode#, #memberPw#, #memberNm#, TO_DATE(#memberBir#, 'YYYYMMDD'), #membmerMail#, #memberHp#, #memberGen#, -->
-<!--                #memberImg1#, #memberImg2#, #memberHobby#, #profileIntro#, #memberInsta#, #profileMusic#, #matchType#); -->
-<!-- 	</insert> -->
+
+	<insert id="insertMember" parameterClass="memberVO">
+		INSERT INTO MEMBER (MEMBER_ID, MEMBER_PW, MEMBER_NM, MEMBER_BIR, MEMBMER_MAIL, MEMBER_HP, MEMBER_GEN,  MATCH_TYPE, 
+				MEMBER_HOBBY, MEMBER_INSTA)
+       VALUES (#member_id#,#member_pw#, #member_nm#, TO_DATE(#member_bir#, 'YYYY-MM-DD'), #membmer_mail#, #member_hp#, #member_gen#, #match_type#,
+               #member_hobby#, #member_insta#)
+	</insert>
+	
 
 <!-- 	<select id="getMember" resultClass="memberVo"> -->
 <!-- 		SELECT CITY_CODE, MEMBER_ID, MEMBER_PW, MEMBER_NM, MEMBER_BIR, MEMBMER_MAIL, MEMBER_HP -->
@@ -18,10 +20,40 @@
 <!-- 		  FROM MEMBER -->
 <!-- 	</select> -->
 
-	<select id="memberLogin" parameterClass="String" resultClass="int">
-		SELECT COUNT(MEMBER_ID)
-		  FROM MEMBER
-		 WHERE MEMBER_ID = #member_id#
-		   AND MEMBER_PW = #member_pw#
+
+	<select id="memberLogin" parameterClass="String" resultClass="String">
+		select member_pw from member where member_id=#member_id#
 	</select>
+	
+	<select id="selectPicture" resultClass="memberVO">
+		select member_id, member_img1, member_nm, extract(year from sysdate)-extract(year from member_bir)+1 member_bir, profile_intro from member where approve_ny = 'Y'
+	</select>
+  
+	<!--중복체크용  -->
+		<select id="getMemberCount" parameterClass="String" resultClass="int">
+		select count(*) cnt from member where member_id = #member_id#
+	</select>
+	
+	<!-- 가입 회원 -->
+		<select id="getWatingMember" resultClass="memberVO">
+		select * from member where approve_ny = 'N'
+	</select>
+
+	<!-- 전체 회원 -->
+		<select id="getAllMemberList" resultClass="memberVO">
+		select * from member where approve_ny = 'Y' order by mem_join
+	</select>
+	
+	<!-- 회원 탈퇴  -->
+		<delete id="deleteMember" parameterClass="String">
+		delete from member where member_id = #mem_id#
+	</delete>
+	
+	<!-- 회원 승급 -->
+		<update id="updateMember" parameterClass="memberVo">
+		update member set APPROVE_NY = 'Y' where APPROVE_NY = 'N'
+
+			
+	</update>
+
 </sqlMap>

@@ -47,4 +47,9 @@ public class NoticeBoardServiceImpl implements INoticeBoardService {
 		return noticeDao.getNotice(noticeId);
 	}
 
+	@Override
+	public int getNoticeCount(int noticeId) {
+		return noticeDao.getNoticeCount(noticeId);
+	}
+
 }

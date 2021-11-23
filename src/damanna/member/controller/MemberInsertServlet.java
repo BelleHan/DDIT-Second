@@ -19,18 +19,18 @@ public class MemberInsertServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
-		String memberId = request.getParameter("memberId");
-		String memberPw = request.getParameter("memberPw");
-		int cityCode = Integer.valueOf(request.getParameter("cityCode"));
-		String memberNm = request.getParameter("memberNm");
-		String memberBir = request.getParameter("memberBir");
-		String membmerMail = request.getParameter("membmerMail");
-		String memberHp = request.getParameter("memberHp");
-		String memberGen = request.getParameter("memberGen");
+		String memberId = request.getParameter("mem_id");
+		String memberPw = request.getParameter("mem_pass");
+//		int cityCode = Integer.valueOf(request.getParameter("mem_city"));
+		String memberNm = request.getParameter("mem_name");
+		String memberBir = request.getParameter("mem_bir");
+		String membmerMail = request.getParameter("mem_mail");
+		String memberHp = request.getParameter("mem_hp");
+		String memberGen = request.getParameter("mem_gen");
 		String memberImg1 = request.getParameter("memberImg1");
 		String memberImg2 = request.getParameter("memberImg2");
 		String profileIntro = request.getParameter("profileIntro");
-		String memberInsta = request.getParameter("memberInsta");
+		String memberInsta = request.getParameter("mem_insta");
 		String profileMusic = request.getParameter("profileMusic");
 		String matchType = request.getParameter("matchType");
 		
@@ -38,7 +38,7 @@ public class MemberInsertServlet extends HttpServlet {
 		MemberVO memvo = new MemberVO();
 		memvo.setMember_id(memberId);
 		memvo.setMember_pw(memberPw);
-		memvo.setCity_code(cityCode);
+//		memvo.setCity_code(cityCode);
 		memvo.setMember_nm(memberNm);
 		memvo.setMember_bir(memberBir);
 		memvo.setMember_nm(memberNm);
@@ -56,9 +56,9 @@ public class MemberInsertServlet extends HttpServlet {
 		IMemberService service = MemberServiceImpl.getInstance();
 		service.insertMember(memvo);  // DB에 insert하기
 		
-		// 메인페이지로 이동하기
-		// TODO JISU : 아직 메인 페이지 없음
-		response.sendRedirect(request.getContextPath() + "/member/memberList.do");
+
+		//로그인 창으로 이동		
+		response.sendRedirect(request.getContextPath() + "/damanna/html/login.jsp");
 		
 	}
 

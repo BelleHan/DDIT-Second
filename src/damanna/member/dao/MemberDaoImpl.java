@@ -56,14 +56,102 @@ public class MemberDaoImpl implements IMemberDao {
 	}
 
 	@Override
-	public int loginMember(String memId) {
-		int cnt = 0;
-
+	public String loginMember(String memId) {
+		
+		String login = null;
+		
 		try {
-			cnt = (int) smc.queryForObject("member.loginMember", memId);
-		} catch (Exception e) {
+			
+			login = (String) smc.queryForObject("member.memberLogin", memId);
+			
+		} catch (SQLException e) {			
+			login = null;
 			e.printStackTrace();
 		}
+		return login;
+	}
+
+	@Override
+	public List<MemberVO> selectPicture() {
+		List<MemberVO> memVo = null;
+		
+		try {
+			
+			memVo = smc.queryForList("member.selectPicture");
+			
+		} catch (SQLException e) {
+			memVo = null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+
+	@Override
+	public int getMemberCount(String memId) {
+		int count = 0;  // 회원ID개수가 저장될 변수
+		
+		try {
+			count = (int) smc.queryForObject("member.getMemberCount", memId);
+		} catch (SQLException e) {
+			count = 0;
+			e.printStackTrace();
+		} 
+		
+		return count;
+	}
+
+	@Override
+	public List<MemberVO> getAllMemberList() {
+		List<MemberVO> memList = new ArrayList<>();
+		
+		try {
+			memList = smc.queryForList("member.getAllMemberList");
+		} catch (SQLException e) {
+			memList = null;
+			e.printStackTrace();
+		} 
+		
+		return memList;
+	}
+
+	@Override
+	public List<MemberVO> getWatingMember() {
+		List<MemberVO> memList2 = new ArrayList<>();
+		
+		try {
+			memList2 = smc.queryForList("member.getWatingMember");
+		} catch (SQLException e) {
+			memList2 = null;
+			e.printStackTrace();
+		} 
+		
+		return memList2;
+	}
+	
+	@Override
+	public int deleteMember(String memId) {
+		int cnt = 0;
+		try {
+			cnt = smc.delete("member.deleteMember", memId);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		
+		return cnt;
+	}
+	
+	@Override
+	public int updateMember(MemberVO memVo) {
+		int cnt = 0;
+		
+		try {
+			cnt = smc.update("member.updateMember", memVo);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		} 
+		
 		return cnt;
 	}
 }

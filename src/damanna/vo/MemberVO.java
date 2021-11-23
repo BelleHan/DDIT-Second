@@ -1,7 +1,7 @@
 package damanna.vo;
 
 public class MemberVO {
-	private int city_code;
+//	private int city_code;
 	private String member_id;
 	private String member_pw;
 	private String member_nm;
@@ -11,7 +11,7 @@ public class MemberVO {
 	private String member_gen;
 	private String member_img1;
 	private String member_img2;
-	private String match_type;
+	private String match_type; 
 	private String member_hobby;
 	private String profile_intro;
 	private String member_insta;
@@ -25,12 +25,12 @@ public class MemberVO {
 	public MemberVO() {
 	}
 
-	public MemberVO(int city_code, String member_id, String member_pw, String member_nm, String member_bir,
+	public MemberVO(String member_id, String member_pw, String member_nm, String member_bir,
 			String membmer_mail, String member_hp, String member_gen, String member_img1, String member_img2,
 			String match_type, String member_hobby, String profile_intro, String member_insta, String profile_music,
 			String mem_join, String approve_ny, String mem_rej, String membership_yn) {
 		super();
-		this.city_code = city_code;
+//		this.city_code = city_code;
 		this.member_id = member_id;
 		this.member_pw = member_pw;
 		this.member_nm = member_nm;
@@ -51,13 +51,13 @@ public class MemberVO {
 		this.membership_yn = membership_yn;
 	}
 
-	public int getCity_code() {
-		return city_code;
-	}
-
-	public void setCity_code(int city_code) {
-		this.city_code = city_code;
-	}
+//	public int getCity_code() {
+//		return city_code;
+//	}
+//
+//	public void setCity_code(int city_code) {
+//		this.city_code = city_code;
+//	}
 
 	public String getMember_id() {
 		return member_id;

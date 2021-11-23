@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="freeBoard">
+
+	<insert id="insertFree" parameterClass="freeBoardVO">
+		insert into free_board (free_id, member_id, free_title, free_content)
+		values (board_seq.nextVal, #member_id#, #free_title#, #free_content#)
+	</insert>
+	
+	<update id="updateFree" parameterClass="freeBoardVO">
+		update free_board set free_title = #free_title#, free_content = #free_content#
+		where free_id = #free_id# 	
+	</update>
+	
+	<delete id="deleteFree" parameterClass="int">
+ 		delete from free_board where free_id=#free_id#
+	</delete>
+	
+	<select id="getAllFree" resultClass="freeBoardVO">
+		select free_id, member_id, free_title, free_content, to_char(sysdate, 'yyyy-mm-dd') free_date, free_count, free_drop
+		from free_board 
+		order by 1
+	</select>
+	
+	<select id="getFree" parameterClass="int" resultClass="freeBoardVO">
+		select free_id, free_count, member_id, free_date, free_title, free_content from free_board where free_id=#free_id#
+	</select>
+	
+	<update id="getFreeCount" parameterClass="int">
+		update free_board set free_count = free_count + 1
+		where free_id = #free_id# 	
+	</update>
+	
+</sqlMap>

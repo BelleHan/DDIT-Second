@@ -16,4 +16,6 @@ public interface INoticeBoardService {
 	
 	public NoticeBoardVO getNotice(int noticeId);
 	
+	public int getNoticeCount(int noticeId);
+	
 }

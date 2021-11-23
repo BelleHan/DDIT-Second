@@ -32,8 +32,8 @@
 <form id= "survay-form" >
  
   <div>
-  <label for="name">I D</label>
-  <input id="name" type="text" name="id" placeholder="ID를 입력해주세요" required/>
+  <label for="mem_id">I D</label>
+  <input id="mem_id" type="text" name="mem_id" placeholder="ID를 입력해주세요" required/>
   </div>
   
   <div id="email-field">
@@ -55,13 +55,23 @@
   <input id="bir" type="date" name="bir">
   </div>
   
+ <div>
+    <label>성 별</label>
+     <label>
+    <input type="radio" name="mem_gen" id="mem_gen" value= "man"/> 남
+    </label>
+    <label>
+    <input type="radio" name="mem_gen" id="mem_gen" value="woman"/> 여
+     </label>
+   </div>
+   
    <div>
     <label for="hpnumber">휴대폰</label>
     <input type="text" name="hpnumber" placeholder="010-0000-0000" > 
   </div>
    <div>
     <label for="addr">거주도시</label>
-	  	 <select class="addr">
+	  	 <select class="addr" name="cityCode" id="cityCode" >
         	 			<option value="2">서울특별시</option>
 						<option value="31">경기도</option>
 						<option value="32">인천광역시</option>
@@ -94,15 +104,6 @@
   </div>
   
   
- <div>
-    <label>백신 접종 여부</label>
-     <label>
-    <input type="radio" name="vaccine" value= "y"/> Y
-    </label>
-    <label>
-    <input type="radio" name="vaccine" value="n"/> N
-     </label>
-   </div>
   
  <div>
     <label>매치 타입</label>

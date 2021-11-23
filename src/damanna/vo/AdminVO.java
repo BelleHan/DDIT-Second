@@ -1,32 +1,28 @@
 package damanna.vo;
 
 public class AdminVO {
-	private String adminId;
-	private String adminPw;
-
-	public AdminVO() {
+	private String admin_Id;
+	private String admin_Pw;
+	
+	
+	
+	
+	public AdminVO(String admin_Id, String admin_Pw) {
+		super();
+		this.admin_Id = admin_Id;
+		this.admin_Pw = admin_Pw;
+	}
+	public String getAdmin_Id() {
+		return admin_Id;
+	}
+	public void setAdmin_Id(String admin_Id) {
+		this.admin_Id = admin_Id;
+	}
+	public String getAdmin_Pw() {
+		return admin_Pw;
+	}
+	public void setAdmin_Pw(String admin_Pw) {
+		this.admin_Pw = admin_Pw;
 	}
 	
-	public AdminVO(String adminId, String adminPw) {
-		super();
-		this.adminId = adminId;
-		this.adminPw = adminPw;
-	}
-
-	public String getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(String adminId) {
-		this.adminId = adminId;
-	}
-
-	public String getAdminPw() {
-		return adminPw;
-	}
-
-	public void setAdminPw(String adminPw) {
-		this.adminPw = adminPw;
-	}
-
 }

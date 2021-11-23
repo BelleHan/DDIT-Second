@@ -111,4 +111,19 @@ public class NoticeBoardDaoImpl implements INoticeBoardDao {
 		return noticeList;
 	}
 
+	@Override
+	public int getNoticeCount(int noticeId) {
+		int cnt = 0;
+		
+		try {
+			
+			Object obj = smc.update("noticeBoard.getNoticeCount", noticeId);
+			
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
 }

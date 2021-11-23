@@ -1,0 +1,46 @@
+.watingmember{
+	width: 100%;
+	margin:15px;
+	padding:15px;
+}
+
+.watingmember div{
+	border: 2px solid red;
+	height: 150px;
+	margin:15px;
+	overflow: scroll;
+}
+.membermanagement{
+	width: 100%;
+	margin:15px;
+	padding:15px;
+}
+.membermanagement div{
+	margin:15px;
+	border: 2px solid blue;
+	height: 200px;
+	overflow: scroll;
+}
+.boardmanagement{
+	width: 100%;
+	margin:15px;
+	padding:15px;
+}
+.boardmanagement div{
+	border: 2px solid blue;
+	height: 200px;
+	margin:15px;
+	overflow: scroll;
+}
+.qnamanagement{
+	width: 100%;
+	margin:15px;
+	padding:15px;
+	
+}
+.qnamanagement div{
+	margin:15px;
+	height: 200px;
+	border: 2px solid blue;
+	overflow: scroll;
+}

@@ -17,26 +17,13 @@
 		형식) <typeAlias alias="alias명" type="클래스의 전체 이름"/>
 	 -->
 
-	 <typeAlias alias="adminVO" type="damanna.vo.AdminVO"/>
-	 <typeAlias alias="adVO" type="damanna.vo.AdVO"/>
-	 <typeAlias alias="boardReportVO" type="damanna.vo.BoardReportVO"/>
-	 <typeAlias alias="chatVO" type="damanna.vo.ChatVO"/>
-	 <typeAlias alias="cityBComment" type="damanna.vo.CityBComment"/>
-	 <typeAlias alias="cityBoard" type="damanna.vo.CityBoard"/>
-	 <typeAlias alias="cityVO" type="damanna.vo.CityVO"/>
-	 <typeAlias alias="commentReportVO" type="damanna.vo.CommentReportVO"/>
-	 <typeAlias alias="dropMemberVO" type="damanna.vo.DropMemberVO"/>
-	 <typeAlias alias="eventBoardVO" type="damanna.vo.EventBoardVO"/>
-	 <typeAlias alias="eventCodeVO" type="damanna.vo.EventCodeVO"/>
-	 <typeAlias alias="matchMemberVO" type="damanna.vo.MatchMemberVO"/>
+	 
 	 <typeAlias alias="memberVO" type="damanna.vo.MemberVO"/>
 	 <typeAlias alias="noticeBoardVO" type="damanna.vo.NoticeBoardVO"/>
 	 <typeAlias alias="paymentVO" type="damanna.vo.PaymentVO"/>
-	 <typeAlias alias="profileReportVO" type="damanna.vo.ProfileReportVO"/>
-	 <typeAlias alias="qnaVO" type="damanna.vo.QnAVO"/>
-	 <typeAlias alias="reviewBoardVO" type="damanna.vo.ReviewBoardVO"/>
-	 <typeAlias alias="swipeVO" type="damanna.vo.SwipeVO"/>
-	 
+	 <typeAlias alias="freeBoardVO" type="damanna.vo.FreeBoardVO"/>
+	 <typeAlias alias="adminVO" type="damanna.vo.AdminVO"/>
+	
 
 	 <!-- DB와의 연결을 처리하는 부분 -->
 	 <transactionManager type="JDBC">
@@ -54,13 +41,10 @@
 	 	형식) <sqlMap resource="경로명/파일명.xml"/>
 	  -->
 	  
-<!-- 	  <sqlMap resource="damanna/ibatis/mapping/admin.xml"/> -->
-<!-- 	  <sqlMap resource="damanna/ibatis/mapping/cityBoard.xml"/> -->
-<!-- 	  <sqlMap resource="damanna/ibatis/mapping/cityBoardComment.xml"/> -->
 	  <sqlMap resource="damanna/ibatis/mapping/member.xml"/>
 	  <sqlMap resource="damanna/ibatis/mapping/noticeBoard.xml"/>
-	  <sqlMap resource="damanna/ibatis/mapping/ad.xml"/>
 	  <sqlMap resource="damanna/ibatis/mapping/payment.xml"/>
-	  <sqlMap resource="damanna/ibatis/mapping/chat.xml"/>
+	  <sqlMap resource="damanna/ibatis/mapping/freeBoard.xml"/>
+	  <sqlMap resource="damanna/ibatis/mapping/admin.xml"/>
 	  
 </sqlMapConfig>

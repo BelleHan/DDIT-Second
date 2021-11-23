@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+/*구글 폰트  */
+a{
+	text-decoration: none
+}
+
+ul {
+	list-style: none
+}
+
+header{
+  width:100%;    /*  너비 */
+  height:120px;   /* 높이 */ 
+  background-color:#B1CAE5; /*배경색 */
+}
+
+/*로고  */
+#logo{
+	float:left;
+	width: 150px;
+	height: 100px;
+	line-height: 100px;
+	padding-left: 20px;
+}
+#logo h1 {
+  font-family:'Merienda', cursive;
+  font-weight:700;
+  font-size:40px;   /* 글자 크기 */
+   color:#fff;    /* 글자 색*/
+}
+.logoimg{
+	width: 100px;
+	height: 100px;
+}
+
+ */
+/*네비게이션바  */
+nav{
+  float:right;   /* 오른쪽으로 플로팅 */
+  width:900px;   /*   너비 */  
+  height:100px;   /* 메뉴 영역 높이 */  
+  padding-top:40px;  /* 메뉴를 아래로 내리기 위해 */  
+  }
+
+#topMenu{
+	height:60px;
+}
+#topMenu li{ 
+	  float:right;  /* 메뉴 항목을 왼쪽으로 플로팅 */ 
+  position: relative;  /* 서브 메뉴를 absolute로 하기 위해, 이 부분을 relative로 */  
+
+}
+
+#topMenu  li  a{
+  display:block;  /* 링크 텍스트는 블록으로 */ 
+  color:#fff;  /* 글자 색 */
+  font-weight:600;  /* 글자 굵기 */
+  font-size : 20px;
+   padding:20px  40px ;  /* 패딩 */ 
+}
+
+/*내용 */
+#contents{
+	float:center;
+}
+
+
+
+.logotext a:link {
+	 text-decoration:none; 
+	 color: white;
+}
+.logotext a:visited {
+	 text-decoration:none;
+	 color: white;
+}
+.logotext a:hover {
+	 text-decoration:none;
+	 color: white;
+}
+.logotext a:active {
+	 text-decoration:none;
+	 color: white;
+	 
+}

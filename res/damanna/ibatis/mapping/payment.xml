@@ -10,4 +10,8 @@ insert into payment(payment_code, member_id, payment_amount, event_code, payment
 values (#payment_code#,#member_id#, #payment_amount#, ' ', sysdate , sysdate + 7)
 </insert>
 
+<select id="getAllPay" parameterClass="String" resultClass="PaymentVo">
+select * from payment
+</select>
+
 </sqlMap>

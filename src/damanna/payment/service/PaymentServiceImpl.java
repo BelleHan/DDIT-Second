@@ -1,5 +1,7 @@
 package damanna.payment.service;
 
+import java.util.List;
+
 import damanna.payment.dao.IPaymentDao;
 import damanna.payment.dao.PaymentDaoImpl;
 import damanna.vo.PaymentVO;
@@ -22,6 +24,11 @@ public class PaymentServiceImpl implements IPaymentService {
 	@Override
 	public int insertPayment(PaymentVO payVo) {
 		return payDao.insertPayment(payVo);
+	}
+
+	@Override
+	public List<PaymentVO> getAllpayList() {
+		return payDao.getAllpayList();
 	}
 
 }
